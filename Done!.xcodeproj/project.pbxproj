@@ -13,6 +13,11 @@
 		93B8DBF8235C560C0015602B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B8DBF6235C560C0015602B /* Main.storyboard */; };
 		93B8DBFA235C560E0015602B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93B8DBF9235C560E0015602B /* Assets.xcassets */; };
 		93B8DBFD235C560E0015602B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B8DBFB235C560E0015602B /* LaunchScreen.storyboard */; };
+		93B8DC07235CC5E20015602B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8DC06235CC5E20015602B /* Task.swift */; };
+		93B8DC09235CC6130015602B /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8DC08235CC6130015602B /* Project.swift */; };
+		93B8DC0B235CC65F0015602B /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8DC0A235CC65F0015602B /* DataModel.swift */; };
+		93B8DC0D235CDF1A0015602B /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8DC0C235CDF1A0015602B /* ProjectDetailViewController.swift */; };
+		93B8DC0F235CDF710015602B /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8DC0E235CDF710015602B /* ProjectsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		93B8DBF9235C560E0015602B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93B8DBFC235C560E0015602B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93B8DBFE235C560E0015602B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93B8DC06235CC5E20015602B /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		93B8DC08235CC6130015602B /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		93B8DC0A235CC65F0015602B /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		93B8DC0C235CDF1A0015602B /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
+		93B8DC0E235CDF710015602B /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +69,33 @@
 				93B8DBF0235C560C0015602B /* AppDelegate.swift */,
 				93B8DBF2235C560C0015602B /* SceneDelegate.swift */,
 				93B8DBF4235C560C0015602B /* ViewController.swift */,
+				93B8DC05235CC5A20015602B /* Controller */,
+				93B8DC04235CC5930015602B /* DataModel */,
 				93B8DBF6235C560C0015602B /* Main.storyboard */,
 				93B8DBF9235C560E0015602B /* Assets.xcassets */,
 				93B8DBFB235C560E0015602B /* LaunchScreen.storyboard */,
 				93B8DBFE235C560E0015602B /* Info.plist */,
 			);
 			path = "Done!";
+			sourceTree = "<group>";
+		};
+		93B8DC04235CC5930015602B /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				93B8DC06235CC5E20015602B /* Task.swift */,
+				93B8DC08235CC6130015602B /* Project.swift */,
+				93B8DC0A235CC65F0015602B /* DataModel.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		93B8DC05235CC5A20015602B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				93B8DC0C235CDF1A0015602B /* ProjectDetailViewController.swift */,
+				93B8DC0E235CDF710015602B /* ProjectsViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +169,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93B8DC0F235CDF710015602B /* ProjectsViewController.swift in Sources */,
+				93B8DC07235CC5E20015602B /* Task.swift in Sources */,
 				93B8DBF5235C560C0015602B /* ViewController.swift in Sources */,
 				93B8DBF1235C560C0015602B /* AppDelegate.swift in Sources */,
+				93B8DC0D235CDF1A0015602B /* ProjectDetailViewController.swift in Sources */,
+				93B8DC09235CC6130015602B /* Project.swift in Sources */,
 				93B8DBF3235C560C0015602B /* SceneDelegate.swift in Sources */,
+				93B8DC0B235CC65F0015602B /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +330,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.scerra.Done-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,7 +348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.scerra.Done-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
