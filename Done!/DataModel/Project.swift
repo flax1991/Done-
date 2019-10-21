@@ -9,6 +9,7 @@
 import Foundation
 
 class Project: NSObject, Codable {
+     
     var name = ""
     var tasks = [Task]()
     var iconName = "checklist"
@@ -21,7 +22,7 @@ class Project: NSObject, Codable {
     
     // how many task 
     func countUncheckedTask() -> Int {
-        var count = 0
+       var count = 0
         for task in tasks where !task.isChecked {
             count += 1
         }

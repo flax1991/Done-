@@ -11,6 +11,7 @@ import Foundation
 class DataModel {
     
     var projects = [Project]()
+    
     var selectedProjectIndex:Int {
         get  {
             return  UserDefaults.standard.integer(forKey: "ProjectIndex")
@@ -31,14 +32,25 @@ class DataModel {
         
     }
     
+    func saveProjects() {
+        let encoder = PropertyListEncoder()
+        do {
+            let data = try encoder.encode(projects)
+            try data.write(to: dataFileURL(), options: .atomic)
+        } catch {
+            print("Error decoding projects list array!")
+        }
+    }
+    
     func fetchProjects() {
         let dataFileURL = self.dataFileURL()
+        print(dataFileURL)
         if let data = try?  Data(contentsOf: dataFileURL)  {
             let decoder =  PropertyListDecoder()
             do {
                 projects = try decoder.decode([Project].self, from: data)
             } catch {
-                print("Error decoding projects list array!")
+                print("Error eecoding projects array.")
             }
         }
     }

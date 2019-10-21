@@ -9,7 +9,7 @@
         <!--Project-->
         <scene sceneID="nnS-fk-VMv">
             <objects>
-                <tableViewController id="fy8-Q3-9Hd" sceneMemberID="viewController">
+                <tableViewController id="fy8-Q3-9Hd" customClass="ProjectsViewController" customModule="Done_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dkg-Io-2M6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,7 +52,7 @@
                     <navigationItem key="navigationItem" title="Project" id="tgo-No-Cpz">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="kIu-9Y-9is">
                             <connections>
-                                <segue destination="Yko-QQ-SkZ" kind="show" id="rnE-WI-XQh"/>
+                                <segue destination="Yko-QQ-SkZ" kind="show" identifier="Segue" id="rnE-WI-XQh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="800" y="143"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Project Detail View Controller-->
         <scene sceneID="hve-zj-FNn">
             <objects>
-                <tableViewController id="Yko-QQ-SkZ" sceneMemberID="viewController">
+                <tableViewController id="Yko-QQ-SkZ" customClass="ProjectDetailViewController" customModule="Done_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="6Ep-gY-WCf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,15 +72,15 @@
                         <sections>
                             <tableViewSection id="pQp-Ot-aoE">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bz4-Xt-hnd">
-                                        <rect key="frame" x="0.0" y="18" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="bz4-Xt-hnd">
+                                        <rect key="frame" x="0.0" y="18" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bz4-Xt-hnd" id="6JU-Jt-Szr">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What do you want to do today?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0yr-v7-WCj">
-                                                    <rect key="frame" x="4" y="4" width="406" height="36"/>
+                                                    <rect key="frame" x="4" y="4" width="406" height="42"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -97,11 +97,11 @@
                             </tableViewSection>
                             <tableViewSection id="CEq-yT-aFB">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="rvh-2v-DHe">
-                                        <rect key="frame" x="0.0" y="97.5" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="50" id="rvh-2v-DHe">
+                                        <rect key="frame" x="0.0" y="104" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rvh-2v-DHe" id="IV4-aS-djY">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4S4-vR-Icp">
@@ -132,18 +132,21 @@
                             </tableViewSection>
                             <tableViewSection id="Ujs-qb-WG5">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="JoD-Ki-rwz">
-                                        <rect key="frame" x="0.0" y="177" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="JoD-Ki-rwz">
+                                        <rect key="frame" x="0.0" y="190" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JoD-Ki-rwz" id="6Dn-Ub-MsT">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7q-vq-qca">
-                                                    <rect key="frame" x="4" y="4" width="406" height="36"/>
+                                                    <rect key="frame" x="4" y="4" width="406" height="42"/>
                                                     <state key="normal" title="Delete item">
                                                         <color key="titleColor" red="0.85043728350000003" green="0.21816034619999999" blue="0.15920260550000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="delete" destination="Yko-QQ-SkZ" eventType="touchUpInside" id="pva-aF-5a6"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -163,9 +166,23 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="V2Z-ec-cYZ">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="35n-tv-F1g"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="LQ1-U4-Ppq"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="35n-tv-F1g">
+                            <connections>
+                                <action selector="cancel" destination="Yko-QQ-SkZ" id="TTJ-iL-HBp"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="LQ1-U4-Ppq">
+                            <connections>
+                                <action selector="save" destination="Yko-QQ-SkZ" id="97q-mH-2fv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cancelBarButtonItem" destination="35n-tv-F1g" id="vmX-Z9-bFr"/>
+                        <outlet property="iconImageView" destination="NqE-aW-szz" id="p3I-Bx-o6A"/>
+                        <outlet property="nameTextField" destination="0yr-v7-WCj" id="HI1-Rr-kfB"/>
+                        <outlet property="savebarButtonItem" destination="LQ1-U4-Ppq" id="ajr-xr-ERT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pU-kP-df6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
