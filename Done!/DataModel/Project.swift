@@ -20,9 +20,10 @@ class Project: NSObject, Codable {
         super.init()
     }
     
-    // how many task 
+    // how many task remaning
     func countUncheckedTask() -> Int {
        var count = 0
+        
         for task in tasks where !task.isChecked {
             count += 1
         }
