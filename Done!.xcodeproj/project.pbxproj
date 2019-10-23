@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9341E3582360E06900F30843 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9341E3572360E06900F30843 /* TasksViewController.swift */; };
+		9341E35A2360E09C00F30843 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9341E3592360E09C00F30843 /* TaskDetailViewController.swift */; };
 		936D3755235F6B7D001E3FE9 /* IconPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936D3754235F6B7D001E3FE9 /* IconPickerViewController.swift */; };
 		93B8DBF1235C560C0015602B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8DBF0235C560C0015602B /* AppDelegate.swift */; };
 		93B8DBF3235C560C0015602B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8DBF2235C560C0015602B /* SceneDelegate.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9341E3572360E06900F30843 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		9341E3592360E09C00F30843 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		936D3754235F6B7D001E3FE9 /* IconPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerViewController.swift; sourceTree = "<group>"; };
 		93B8DBED235C560C0015602B /* Done!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Done!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B8DBF0235C560C0015602B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 				93B8DC0C235CDF1A0015602B /* ProjectDetailViewController.swift */,
 				93B8DC0E235CDF710015602B /* ProjectsViewController.swift */,
 				936D3754235F6B7D001E3FE9 /* IconPickerViewController.swift */,
+				9341E3572360E06900F30843 /* TasksViewController.swift */,
+				9341E3592360E09C00F30843 /* TaskDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,7 +184,9 @@
 				936D3755235F6B7D001E3FE9 /* IconPickerViewController.swift in Sources */,
 				93B8DBF1235C560C0015602B /* AppDelegate.swift in Sources */,
 				93B8DC0D235CDF1A0015602B /* ProjectDetailViewController.swift in Sources */,
+				9341E35A2360E09C00F30843 /* TaskDetailViewController.swift in Sources */,
 				93B8DC09235CC6130015602B /* Project.swift in Sources */,
+				9341E3582360E06900F30843 /* TasksViewController.swift in Sources */,
 				93B8DBF3235C560C0015602B /* SceneDelegate.swift in Sources */,
 				93B8DC0B235CC65F0015602B /* DataModel.swift in Sources */,
 			);

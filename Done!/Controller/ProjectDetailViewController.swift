@@ -20,7 +20,7 @@ class ProjectDetailViewController: UITableViewController {
             iconImageView.image = UIImage(named: iconName)
         }
     }
-    var dataModel = DataModel()
+    var dataModel : DataModel!
     var projectToEdit: Project?
     
     override func viewDidLoad() {

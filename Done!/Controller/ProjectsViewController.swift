@@ -22,14 +22,20 @@ class ProjectsViewController: UITableViewController  {
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Segue" {
-             let projectDetailVC = segue.destination as! ProjectDetailViewController
-                projectDetailVC.dataModel = dataModel
+            let projectDetailVC = segue.destination as! ProjectDetailViewController
+            projectDetailVC.dataModel = dataModel
         } else if segue.identifier == "ShowProjectDetail" {
             let projectDetailVC = segue.destination as! ProjectDetailViewController
             projectDetailVC.dataModel = dataModel
             if let indexPath = sender as? IndexPath {
                 let selectedProject = dataModel.projects[indexPath.row]
                 projectDetailVC.projectToEdit = selectedProject
+            }
+        } else if segue.identifier == "ShowProjectTask" {
+            let  taskVC = segue.destination as! TasksViewController
+            taskVC.dataModel = dataModel
+            if let indexPath = tableView.indexPathForSelectedRow {
+                taskVC.project  = dataModel.projects[indexPath.row]
             }
         }
     }

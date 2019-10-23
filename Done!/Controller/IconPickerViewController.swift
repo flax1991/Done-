@@ -59,7 +59,7 @@ class IconPickerViewController: UITableViewController {
         cell.layer.transform = rotationTransform
         cell.alpha = 0.5
         
-        UIView.animate(withDuration: 0.75) {
+        UIView.animate(withDuration: 0.55) {
             cell.layer.transform = CATransform3DIdentity
             cell.alpha = 1.0
         }

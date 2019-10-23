@@ -16,6 +16,14 @@ class Task : NSObject, Codable {
     var shouldRemind = false
     var taskID: Int
     
+        init(text: String, isChecked:Bool, shouldRemind: Bool, dueDate: Date) {
+        self.text = text
+        self.isChecked = isChecked
+        self.shouldRemind = shouldRemind
+        self.dueDate = dueDate
+        taskID = DataModel.generateNextTaskID()
+    }
+    
     override init() {
         taskID = DataModel.generateNextTaskID()
     }
