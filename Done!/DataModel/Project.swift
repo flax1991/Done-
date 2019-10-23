@@ -12,9 +12,9 @@ class Project: NSObject, Codable {
      
     var name = ""
     var tasks = [Task]()
-    var iconName = "checklist"
+    var iconName = "Clipboard"
     
-    init(name:String, iconName:String = "checklist") {
+    init(name:String, iconName:String = "Clipboard") {
         self.name = name
         self.iconName = iconName
         super.init()

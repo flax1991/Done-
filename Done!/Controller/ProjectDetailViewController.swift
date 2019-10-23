@@ -15,8 +15,13 @@ class ProjectDetailViewController: UITableViewController {
     @IBOutlet weak var cancelBarButtonItem:UIBarButtonItem!
     @IBOutlet weak var savebarButtonItem:UIBarButtonItem!
     
-    var iconName = "checklist"
-    var dataModel : DataModel!
+    var iconName = "Clipboard" {
+        didSet {
+            iconImageView.image = UIImage(named: iconName)
+        }
+    }
+    var dataModel = DataModel()
+    var projectToEdit: Project?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +31,27 @@ class ProjectDetailViewController: UITableViewController {
         iconImageView.image = UIImage(named: iconName)
         nameTextField.becomeFirstResponder()
         
+        if let projectToEdit = projectToEdit {
+            iconName = projectToEdit.iconName
+            nameTextField.text = projectToEdit.name
+            title = "Edit Project"
+        }
+        
     }
     
-    
+    // MARK: - target / Action
     @IBAction func save(){
         guard let text = nameTextField.text, !text.isEmpty else {return}
-        let newProject = Project(name: text, iconName: iconName )
-        dataModel.projects.append(newProject)
+        
+        if let projectToEdit = projectToEdit {
+            projectToEdit.name = nameTextField.text!
+            projectToEdit.iconName = iconName
+        } else {
+            let newProject = Project(name: text, iconName: iconName )
+            dataModel.projects.append(newProject)
+            
+        }
+        //save in...
         dataModel.saveProjects()
         navigationController?.popViewController(animated: true)
         
@@ -45,5 +64,18 @@ class ProjectDetailViewController: UITableViewController {
     @IBAction func delete() {
         
     }
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowIconList" {
+            let iconPickerVC = segue.destination as? IconPickerViewController
+            iconPickerVC?.delegate = self
+            
+        }
+    }
+}
+extension ProjectDetailViewController: IconPickerViewControllerDelegate {
     
+    func iconPickerDidFinishPick(_ icon: String) {
+        iconName = icon
+    }
 }

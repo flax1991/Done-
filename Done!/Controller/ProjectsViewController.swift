@@ -10,7 +10,7 @@ import UIKit
 
 class ProjectsViewController: UITableViewController  {
     
-    var  dataModel: DataModel!
+    var dataModel = DataModel()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -18,10 +18,18 @@ class ProjectsViewController: UITableViewController  {
         tableView.reloadData()
     }
     
+    
+    //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Segue" {
-            if let projectDetailVC = segue.destination as? ProjectDetailViewController {
+             let projectDetailVC = segue.destination as! ProjectDetailViewController
                 projectDetailVC.dataModel = dataModel
+        } else if segue.identifier == "ShowProjectDetail" {
+            let projectDetailVC = segue.destination as! ProjectDetailViewController
+            projectDetailVC.dataModel = dataModel
+            if let indexPath = sender as? IndexPath {
+                let selectedProject = dataModel.projects[indexPath.row]
+                projectDetailVC.projectToEdit = selectedProject
             }
         }
     }
@@ -30,10 +38,7 @@ class ProjectsViewController: UITableViewController  {
 extension ProjectsViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let data = dataModel {
-            return data.projects.count
-        }
-        return 0
+        return dataModel.projects.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,5 +60,9 @@ extension ProjectsViewController {
             cell.detailTextLabel?.text = "\(uncheckedTaskCount) Task Remaning"
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowProjectDetail", sender: indexPath)
     }
 }
