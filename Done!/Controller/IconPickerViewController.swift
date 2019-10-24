@@ -15,7 +15,7 @@ protocol IconPickerViewControllerDelegate: class {
 
 class IconPickerViewController: UITableViewController {
     
-    let icons = ["Baby", "Birthday-cake", "Cheers", "Clipboard", "Party", "Email", "Family", "Groceries", "Play", "Shopping-basket", "Sports", "Trip", "Work", "Wedding"]
+    let icons = ["Baby", "Birthday-cake", "Cheers", "Party", "Email", "Family", "Groceries", "Play", "Shopping-basket", "Sports", "Trip", "Work", "Wedding"]
     
     // create an instance 
     weak var delegate : IconPickerViewControllerDelegate?

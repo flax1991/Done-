@@ -10,9 +10,9 @@
 		9341E3582360E06900F30843 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9341E3572360E06900F30843 /* TasksViewController.swift */; };
 		9341E35A2360E09C00F30843 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9341E3592360E09C00F30843 /* TaskDetailViewController.swift */; };
 		936D3755235F6B7D001E3FE9 /* IconPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936D3754235F6B7D001E3FE9 /* IconPickerViewController.swift */; };
+		93B7CD5A236212390054DC98 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B7CD59236212390054DC98 /* TaskCell.swift */; };
 		93B8DBF1235C560C0015602B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8DBF0235C560C0015602B /* AppDelegate.swift */; };
 		93B8DBF3235C560C0015602B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8DBF2235C560C0015602B /* SceneDelegate.swift */; };
-		93B8DBF5235C560C0015602B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8DBF4235C560C0015602B /* ViewController.swift */; };
 		93B8DBF8235C560C0015602B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B8DBF6235C560C0015602B /* Main.storyboard */; };
 		93B8DBFA235C560E0015602B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93B8DBF9235C560E0015602B /* Assets.xcassets */; };
 		93B8DBFD235C560E0015602B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B8DBFB235C560E0015602B /* LaunchScreen.storyboard */; };
@@ -27,10 +27,10 @@
 		9341E3572360E06900F30843 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		9341E3592360E09C00F30843 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		936D3754235F6B7D001E3FE9 /* IconPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerViewController.swift; sourceTree = "<group>"; };
+		93B7CD59236212390054DC98 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		93B8DBED235C560C0015602B /* Done!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Done!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B8DBF0235C560C0015602B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93B8DBF2235C560C0015602B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		93B8DBF4235C560C0015602B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		93B8DBF7235C560C0015602B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93B8DBF9235C560E0015602B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93B8DBFC235C560E0015602B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93B7CD5B2362123F0054DC98 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				93B8DBF6235C560C0015602B /* Main.storyboard */,
+				93B7CD59236212390054DC98 /* TaskCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		93B8DBE4235C560C0015602B = {
 			isa = PBXGroup;
 			children = (
@@ -74,10 +83,9 @@
 			children = (
 				93B8DBF0235C560C0015602B /* AppDelegate.swift */,
 				93B8DBF2235C560C0015602B /* SceneDelegate.swift */,
-				93B8DBF4235C560C0015602B /* ViewController.swift */,
 				93B8DC05235CC5A20015602B /* Controller */,
 				93B8DC04235CC5930015602B /* DataModel */,
-				93B8DBF6235C560C0015602B /* Main.storyboard */,
+				93B7CD5B2362123F0054DC98 /* View */,
 				93B8DBF9235C560E0015602B /* Assets.xcassets */,
 				93B8DBFB235C560E0015602B /* LaunchScreen.storyboard */,
 				93B8DBFE235C560E0015602B /* Info.plist */,
@@ -180,12 +188,12 @@
 			files = (
 				93B8DC0F235CDF710015602B /* ProjectsViewController.swift in Sources */,
 				93B8DC07235CC5E20015602B /* Task.swift in Sources */,
-				93B8DBF5235C560C0015602B /* ViewController.swift in Sources */,
 				936D3755235F6B7D001E3FE9 /* IconPickerViewController.swift in Sources */,
 				93B8DBF1235C560C0015602B /* AppDelegate.swift in Sources */,
 				93B8DC0D235CDF1A0015602B /* ProjectDetailViewController.swift in Sources */,
 				9341E35A2360E09C00F30843 /* TaskDetailViewController.swift in Sources */,
 				93B8DC09235CC6130015602B /* Project.swift in Sources */,
+				93B7CD5A236212390054DC98 /* TaskCell.swift in Sources */,
 				9341E3582360E06900F30843 /* TasksViewController.swift in Sources */,
 				93B8DBF3235C560C0015602B /* SceneDelegate.swift in Sources */,
 				93B8DC0B235CC65F0015602B /* DataModel.swift in Sources */,

@@ -15,7 +15,7 @@ class ProjectDetailViewController: UITableViewController {
     @IBOutlet weak var cancelBarButtonItem:UIBarButtonItem!
     @IBOutlet weak var savebarButtonItem:UIBarButtonItem!
     
-    var iconName = "Clipboard" {
+    var iconName = "questions" {
         didSet {
             iconImageView.image = UIImage(named: iconName)
         }

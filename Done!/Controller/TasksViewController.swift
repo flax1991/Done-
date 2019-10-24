@@ -38,6 +38,13 @@ class TasksViewController: UITableViewController {
             let taskDetailDC = segue.destination as? TaskDetailViewController
             taskDetailDC?.project = project
             taskDetailDC?.dataModel = dataModel
+        } else if segue.identifier == "EditTask" {
+            let taskDetailDC = segue.destination as? TaskDetailViewController
+            taskDetailDC?.project = project
+            taskDetailDC?.dataModel = dataModel
+            if let indexPath = tableView.indexPathForSelectedRow {
+                taskDetailDC?.taskToEdit = project.tasks[indexPath.row]
+            }
         }
     }
 }
@@ -50,10 +57,21 @@ extension TasksViewController  {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = project.tasks[indexPath.row].text
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TaskCell
+        
+        cell.task = project.tasks[indexPath.row]
+        cell.delegate = self
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
+}
+extension TasksViewController: TaskCellDelegate {
+    func taskCell(_ cell: TaskCell, didToggleCheckedTask: Task) {
+        dataModel.saveProjects()
+    }
 }

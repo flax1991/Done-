@@ -15,10 +15,12 @@ class TaskDetailViewController: UITableViewController {
     @IBOutlet weak var cancelBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var shouldRemindMeSwitch: UISwitch!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var clockImage: UIImageView!
     
     var dueDate = Date()
     var project : Project!
     var dataModel : DataModel!
+    var taskToEdit: Task?
     
     
     override func viewDidLoad() {
@@ -28,6 +30,15 @@ class TaskDetailViewController: UITableViewController {
         title = "New Task"
         dateLabel.textColor = UIColor.lightGray
         taskTextField.becomeFirstResponder()
+        clockImage.transform = CGAffineTransform(rotationAngle: -50)
+        
+        if let taskToEdit = taskToEdit {
+            title = "Edit Task"
+            taskTextField.text = taskToEdit.text
+            shouldRemindMeSwitch.isOn = taskToEdit.shouldRemind
+            dueDate = taskToEdit.dueDate
+            
+        }
     }
     
     
@@ -36,8 +47,16 @@ class TaskDetailViewController: UITableViewController {
     
     @IBAction func save() {
         guard let text = taskTextField.text, !text.isEmpty else {return}
-        let newtask = Task(text: text, isChecked: false, shouldRemind: shouldRemindMeSwitch.isOn, dueDate: dueDate)
-        project.tasks.append(newtask)
+        
+        if let taskToEdit = taskToEdit{
+            taskToEdit.text = taskTextField.text!
+            taskToEdit.shouldRemind = shouldRemindMeSwitch.isOn
+            taskToEdit.dueDate = dueDate
+        } else {
+            let newtask = Task(text: text, isChecked: false, shouldRemind: shouldRemindMeSwitch.isOn, dueDate: dueDate)
+            project.tasks.append(newtask)
+        }
+        
         dataModel.saveProjects()
         navigationController?.popViewController(animated: true)
     }
