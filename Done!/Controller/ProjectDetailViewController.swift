@@ -62,7 +62,23 @@ class ProjectDetailViewController: UITableViewController {
     }
     
     @IBAction func delete() {
-        
+        // create alert for deleteting
+        if let projectToEdit = projectToEdit {
+            let alert = UIAlertController(title: "Are you Sure?", message: "If Deleteting the project you will not be able to recover it.", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let delete = UIAlertAction(title: "Delete", style: .destructive) { (_) in
+                
+                if let projectIndex = self.dataModel.projects.firstIndex(of: projectToEdit) {
+                    self.dataModel.projects.remove(at: projectIndex)
+                    self.dataModel.saveProjects()
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+            alert.addAction(cancel)
+            alert.addAction(delete)
+            
+            present(alert, animated: true, completion: nil)
+        }
     }
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

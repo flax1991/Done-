@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 protocol TaskCellDelegate: class {
     func taskCell(_ cell: TaskCell, didToggleCheckedTask: Task )
 }
@@ -31,7 +32,8 @@ class TaskCell: UITableViewCell {
     }
     
     func setupUI() {
-        checkmarkButton.setTitle(task.isChecked ? "✅" : "☑️", for: .normal)
+        checkmarkButton.setTitle(task.isChecked ? "☑︎" : "□", for: .normal)
         label.attributedText = NSAttributedString(string: task.text, attributes: task.isChecked ? [.strikethroughStyle : true] : [:])
     }
+ 
 }

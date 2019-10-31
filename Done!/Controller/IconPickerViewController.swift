@@ -52,7 +52,7 @@ class IconPickerViewController: UITableViewController {
     }
     
     
-    
+    // animation cell
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 10, 0)
@@ -63,8 +63,6 @@ class IconPickerViewController: UITableViewController {
             cell.layer.transform = CATransform3DIdentity
             cell.alpha = 1.0
         }
-        
-        
         
     }
 }

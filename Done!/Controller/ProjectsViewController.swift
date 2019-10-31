@@ -57,6 +57,7 @@ extension ProjectsViewController {
         cell.imageView?.contentMode = .scaleAspectFit
        
         
+        // count how many task 
         let uncheckedTaskCount = project.countUncheckedTask()
         if project.tasks.count == 0 {
             cell.detailTextLabel?.text = "No task."
@@ -70,5 +71,15 @@ extension ProjectsViewController {
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         performSegue(withIdentifier: "ShowProjectDetail", sender: indexPath)
+    }
+    
+    // Delete swipe cell
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            dataModel.projects.remove(at: indexPath.row)
+            dataModel.saveProjects()
+            // UpdateUI
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
 }

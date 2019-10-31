@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 class Task : NSObject, Codable {
     
@@ -28,9 +29,35 @@ class Task : NSObject, Codable {
         taskID = DataModel.generateNextTaskID()
     }
     
+    deinit {
+        removeNotification()
+    }
+    
     func toggleChecked() {
         isChecked = !isChecked
         
   }
+    
+    // Reminder
+     func scheduleReminderNotification() {
+         removeNotification()
+        if shouldRemind && dueDate > Date() {
+            let content = UNMutableNotificationContent()
+            content.title = "Reminder:"
+            content.body = text
+            content.sound = .default
+            
+            let calendar = Calendar(identifier: .gregorian)
+            let components = calendar.dateComponents([.month, .day, .hour, .minute], from: dueDate)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+            let request = UNNotificationRequest(identifier: "\(taskID)", content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        }
+     }
+     
+     func removeNotification() {
+         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(taskID)"])
+     }
     
 }
